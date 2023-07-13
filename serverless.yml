@@ -1,0 +1,75 @@
+service: Nicolas-Valdearenas-sls-cognito
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - cognito-idp:AdminInitiateAuth
+        - cognito-idp:AdminCreateUser
+        - cognito-idp:AdminSetUserPassword
+        - cognito-idp:AdminUpdateUserAttributes
+        - cognito-idp:AdminDeleteUser
+      Resource: "*"
+
+  environment:
+    user_pool_id: { Ref: UserPool }
+    client_id: { Ref: UserClient }
+
+functions:
+  loginUser:
+    handler: functions/loginUser.handler
+    events:
+      - http:
+          path: user/login
+          method: post
+          cors: true
+
+  signupUser:
+    handler: functions/signupUser.handler
+    events:
+      - http:
+          path: user/signup
+          method: post
+          cors: true
+
+  updateUser:
+    handler: functions/updateUser.handler
+    events:
+      - http:
+          path: user/update
+          method: put
+          cors: true
+          authorizer:
+            name: PrivateAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt:
+                - UserPool
+                - Arn
+            claims:
+              - email
+
+  deleteUser:
+    handler: functions/deleteUser.handler
+    events:
+      - http:
+          path: user/delete
+          method: delete
+          cors: true
+          authorizer:
+            name: PrivateAuthorizer
+            type: COGNITO_USER_POOLS
+            arn:
+              Fn::GetAtt:
+                - UserPool
+                - Arn
+            claims:
+              - email
+
+resources:
+  - ${file(resources/cognito.yaml)}

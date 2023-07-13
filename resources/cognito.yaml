@@ -1,0 +1,37 @@
+Resources:
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: serverless-auth-pool
+      Schema:
+        - AttributeDataType: String
+          Name: email
+          Required: true
+          Mutable: true
+        - AttributeDataType: String
+          Name: first_name
+          Mutable: true
+        - AttributeDataType: String
+          Name: last_name
+          Mutable: true
+        - AttributeDataType: Number
+          Name: age
+          Mutable: true
+      AutoVerifiedAttributes:
+        - email
+      UsernameAttributes:
+        - email
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 6
+
+  UserClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: user-pool-ui
+      GenerateSecret: false
+      UserPoolId: { Ref: UserPool }
+      AccessTokenValidity: 5
+      IdTokenValidity: 5
+      ExplicitAuthFlows:
+        - "ADMIN_NO_SRP_AUTH"

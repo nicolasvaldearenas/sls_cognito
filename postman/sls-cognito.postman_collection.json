@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "11e4289d-28c9-47de-8dd2-4ca1e61d6a69",
+		"name": "sls-cognito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mail@example.com\",\n    \"password\": \"123456\",\n    \"first_name\": \"First\",\n    \"last_name\": \"Last\",\n    \"age\": \"32\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zdy9w6u9bg.execute-api.us-east-1.amazonaws.com/dev/user/signup",
+					"protocol": "https",
+					"host": [
+						"zdy9w6u9bg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJSQVBrZVA1RmRpanlIZmRVSVwvNVFFQlc5TTFPMXcxUlpmVXJQQU45Rk41RT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxYWU0Mjg4YS0wZTFlLTQ3MWQtOWZkNC1mZmExYjEyZWFmMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYnA1YWNIaTQ3IiwiY29nbml0bzp1c2VybmFtZSI6IjFhZTQyODhhLTBlMWUtNDcxZC05ZmQ0LWZmYTFiMTJlYWYwZSIsIm9yaWdpbl9qdGkiOiJlNDFmMTFjYy0xNWViLTRkOTctYWZkNi1jNzljMzRjMGVhYmQiLCJhdWQiOiI1M2tvbzgxNHIwOGcyczk1NnY3cTJicmg1YSIsImN1c3RvbTpsYXN0X25hbWUiOiJWYWxkZWFyZW5hcyIsImV2ZW50X2lkIjoiYTVmN2M1ZDUtZTczMS00ZDY5LTllMzQtYmVhZWJmYmRiZmQwIiwiY3VzdG9tOmZpcnN0X25hbWUiOiJOaWNvbMOhcyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjcxNTY0NDQxLCJjdXN0b206YWdlIjoiMzIiLCJleHAiOjE2NzE1ODI0NDEsImlhdCI6MTY3MTU2NDQ0MSwianRpIjoiMjk5MDkzM2UtNzk0NC00NmRhLTk0MjQtOTNmMmFkZGM3ZDNhIiwiZW1haWwiOiJuaWNvbGFzLnZhbGRlYXJlbmFzQGNsb3VkaGVzaXZlLmNvbSJ9.lRvHy9Yi3L07ZbVIoixUZrGAcW9fKNd2viOnj_KgmpSm9VO9XxamcVTSMGJk6lmrcBwRG-5HWQwhZF0RsIp5fb7y7gl7mnE-rspkvVhZ_RiMSYUjycDVVXENwP6TEzj7Pymw1fiZsKUPrBcegQz2vQqU9fRMiQCTtrrR2pvZMTszz7CuXn69gX4wkUuw22tEZNFjczIVgfN_oAC3eAUWJerW6HzDgZLvDNkdksNMG5fLcDcu-UA_wKUCXgf_QB9zRqNO0oZM8v2QQMuDdLy-gFXwJJtEi2PElu5Ued1gH_qYE95uK1bnklmQzluK-grievoHqCULwgJI5wUpnReg5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mail@example.com\",\n    \"first_name\": \"First\",\n    \"last_name\": \"Last\",\n    \"age\": \"30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zdy9w6u9bg.execute-api.us-east-1.amazonaws.com/dev/user/update",
+					"protocol": "https",
+					"host": [
+						"zdy9w6u9bg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJSQVBrZVA1RmRpanlIZmRVSVwvNVFFQlc5TTFPMXcxUlpmVXJQQU45Rk41RT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxYWU0Mjg4YS0wZTFlLTQ3MWQtOWZkNC1mZmExYjEyZWFmMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYnA1YWNIaTQ3IiwiY29nbml0bzp1c2VybmFtZSI6IjFhZTQyODhhLTBlMWUtNDcxZC05ZmQ0LWZmYTFiMTJlYWYwZSIsIm9yaWdpbl9qdGkiOiJlNDFmMTFjYy0xNWViLTRkOTctYWZkNi1jNzljMzRjMGVhYmQiLCJhdWQiOiI1M2tvbzgxNHIwOGcyczk1NnY3cTJicmg1YSIsImN1c3RvbTpsYXN0X25hbWUiOiJWYWxkZWFyZW5hcyIsImV2ZW50X2lkIjoiYTVmN2M1ZDUtZTczMS00ZDY5LTllMzQtYmVhZWJmYmRiZmQwIiwiY3VzdG9tOmZpcnN0X25hbWUiOiJOaWNvbMOhcyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjcxNTY0NDQxLCJjdXN0b206YWdlIjoiMzIiLCJleHAiOjE2NzE1ODI0NDEsImlhdCI6MTY3MTU2NDQ0MSwianRpIjoiMjk5MDkzM2UtNzk0NC00NmRhLTk0MjQtOTNmMmFkZGM3ZDNhIiwiZW1haWwiOiJuaWNvbGFzLnZhbGRlYXJlbmFzQGNsb3VkaGVzaXZlLmNvbSJ9.lRvHy9Yi3L07ZbVIoixUZrGAcW9fKNd2viOnj_KgmpSm9VO9XxamcVTSMGJk6lmrcBwRG-5HWQwhZF0RsIp5fb7y7gl7mnE-rspkvVhZ_RiMSYUjycDVVXENwP6TEzj7Pymw1fiZsKUPrBcegQz2vQqU9fRMiQCTtrrR2pvZMTszz7CuXn69gX4wkUuw22tEZNFjczIVgfN_oAC3eAUWJerW6HzDgZLvDNkdksNMG5fLcDcu-UA_wKUCXgf_QB9zRqNO0oZM8v2QQMuDdLy-gFXwJJtEi2PElu5Ued1gH_qYE95uK1bnklmQzluK-grievoHqCULwgJI5wUpnReg5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mail@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zdy9w6u9bg.execute-api.us-east-1.amazonaws.com/dev/user/delete",
+					"protocol": "https",
+					"host": [
+						"zdy9w6u9bg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mail@example.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zdy9w6u9bg.execute-api.us-east-1.amazonaws.com/dev/user/login",
+					"protocol": "https",
+					"host": [
+						"zdy9w6u9bg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
